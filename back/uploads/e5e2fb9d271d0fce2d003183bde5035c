@@ -1,0 +1,22 @@
+Ты взял 8 таск
+> git checkout -b fixes#8
+Вносим изменения
+> git add .
+> git commit -S -m "update page (fixes #8)"
+git commit -m "update page (fixes #9)"
+> git push origin fixes#8
+
+
+postgres=# CREATE USER 'postgresadmin' WITH PASSWORD 'PostgresAdmin'
+postgres=# CREATE DATABASE 'hutorok_db'
+
+
+    return store.dispatch('content/getCategories');
+
+
+:src=" require(`@/assets/img/groups/${group.url}`) "
+
+<modal-due-date 
+					:dueDate.sync="taskToSubmit.dueDate"
+					@clear="clearDueDate" />
+
