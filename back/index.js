@@ -31,6 +31,10 @@ app.post('/upload', upload.single('file'), (req, res) => {
   res.json({file: req.file});
 })
 
+app.post('/multiple', upload.array('files'), (req, res) => {
+  res.json({files: req.files});
+})
+
 app.use(function(err, req, res, next) {
   if(err.code === 'LIMIT_FILE_TYPES') {
     res.status(422).json({error: 'Only images are allowed'});
