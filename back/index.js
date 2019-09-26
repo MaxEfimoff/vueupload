@@ -23,6 +23,9 @@ const upload = multer({
   limits: {
     fileSize: MAX_SIZE
   }
+});
+const pureupload = multer({
+  dest: './uploads',
 })
 
 // 'file' comes from front/src/SimpleUpload.vue 
@@ -34,6 +37,11 @@ app.post('/upload', upload.single('file'), (req, res) => {
 app.post('/multiple', upload.array('files'), (req, res) => {
   res.json({files: req.files});
 })
+
+app.post('/dropzone', pureupload.single('file'), (req, res) => {
+  res.json({file: req.file});
+})
+
 
 app.use(function(err, req, res, next) {
   if(err.code === 'LIMIT_FILE_TYPES') {
